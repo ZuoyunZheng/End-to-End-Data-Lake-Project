@@ -1,4 +1,4 @@
-FROM bitnami/airflow:latest
+FROM bitnami/airflow:2.10.2
 
 USER root
 RUN apt-get update && apt-get install -y openssh-client && apt-get clean
@@ -8,6 +8,7 @@ RUN chown -R airflow_user:airflow_user /opt/bitnami/airflow
 
 RUN chmod 777 /opt/bitnami/airflow
 
+RUN airflow db init
 RUN airflow db upgrade
 
 USER 1001

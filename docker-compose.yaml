@@ -124,7 +124,7 @@ services:
   mongodb:
     container_name: mongodb
     hostname: mongodb
-    image: bitnami/mongodb:7.0.2
+    image: bitnami/mongodb:8.0.6
     ports:
       - "27017:27017"
     environment:
@@ -198,7 +198,10 @@ services:
           - postgresql
 
   airflow-scheduler:
-    image: bitnami/airflow-scheduler:latest
+    image: bitnami/airflow-scheduler:2.10.2
+    # build:
+    #   context: ./airflow
+    #   dockerfile: Dockerfile.scheduler
     container_name: airflow-scheduler
     environment:
       - AIRFLOW_DATABASE_NAME=airflowdb
