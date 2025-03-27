@@ -11,6 +11,8 @@ conn = mysql.connector.connect(
     database='test_db'
 )
 cursor = conn.cursor()
+cursor.execute(f"DROP TABLE IF EXISTS users")
+cursor.execute(f"CREATE TABLE users (id INT, signal_strength INT, frequency INT, location VARCHAR(255), timestamp DATETIME)")
 
 # Function to generate random location
 def generate_location():

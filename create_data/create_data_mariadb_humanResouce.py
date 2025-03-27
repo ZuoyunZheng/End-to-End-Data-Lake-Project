@@ -11,6 +11,8 @@ conn = mysql.connector.connect(
     database='test_db'
 )
 cursor = conn.cursor()
+cursor.execute(f"DROP TABLE IF EXISTS humanresource")
+cursor.execute(f"CREATE TABLE humanresource (user_id INT, department VARCHAR(255), position VARCHAR(255), salary DECIMAL(10, 2), hire_date DATE)")
 
 # Function to generate random department
 def generate_department():
