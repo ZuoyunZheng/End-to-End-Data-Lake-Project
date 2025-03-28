@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from bson.objectid import ObjectId
 
 # Connect to the MongoDB server with authentication
-client = pymongo.MongoClient("mongodb://root:root@172.80.0.101:27017/")
+client = pymongo.MongoClient("mongodb://admin:admin@172.80.0.101:27017/")
 #client = pymongo.MongoClient("mongodb://172.80.0.101:27017/test_db?authSource=test_db")
 print(client.list_database_names())
 db = client["test_db"]
